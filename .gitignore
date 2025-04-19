@@ -36,6 +36,7 @@ wheels/
 # 测试文件
 *.txt
 !requirements.txt
+!examples/*.txt
 test.png
 test.py
 
