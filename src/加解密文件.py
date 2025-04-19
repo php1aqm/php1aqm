@@ -49,7 +49,7 @@ char_to_vector = {
     "u": tuple(-x for x in RIGHT_v), "f": tuple(-x for x in UP_v), "r": tuple(-x for x in FRONT_v)
 }
 
-with open("1.txt", 'r', encoding='utf-8') as f:
+with open("test.txt", 'r', encoding='utf-8') as f:
     plaintext = f.read()
 
 punctuation_text = f_c.chinese_punctuation_to_ascii(plaintext)

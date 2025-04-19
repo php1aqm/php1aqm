@@ -2,6 +2,10 @@
 
 基于骰子方向和位移算法的加解密系统，可以加密中文和英文文本。
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.6+-green.svg)
+![License](https://img.shields.io/badge/license-MIT-yellow.svg)
+
 ## 项目介绍
 
 这个项目实现了一种基于骰子状态变换的加密算法，通过骰子的不同朝向来生成密钥，并使用向量叉乘等数学运算来实现加密和解密过程。系统支持中文汉字（通过拼音转换）和ASCII字符的加解密。骰子的六个面在空间中的不同朝向构成了复杂的密钥空间，使加密过程具有较高的安全性。
@@ -16,64 +20,51 @@
 - 独特的基于骰子状态的密钥生成机制
 - 双向验证的解密过程
 
-## 系统组件
+## 快速开始
 
-项目包含以下主要文件：
-
-- `加解密.py`: 主程序，实现了GUI界面和加解密逻辑
-- `f_c.py`: 核心函数库，包含各种工具函数和数学运算
-- `jiajiemi.py`: GUI界面定义（由PyQt自动生成）
-- `jiajiemi.ui`: GUI界面设计文件
-- `加解密文件.py`: 用于处理文件的加解密
-- `test.py`: 测试脚本
-
-## 安装指南
-
-### 环境要求
-- Python 3.6+
-- Windows/Linux/macOS
-
-### 安装依赖
+### 安装
 
 ```bash
+# 克隆仓库
+git clone https://github.com/php1aqm/php1aqm.git
+cd php1aqm
+
+# 安装依赖
 pip install -r requirements.txt
 ```
 
-或者手动安装：
+### 运行
 
 ```bash
-pip install PyQt5>=5.15.0 pypinyin>=0.46.0 tqdm>=4.64.0
+# 启动图形界面
+python main.py
+
+# 或使用命令行模式
+python main.py -t "要加密的文本" -k "2 3" -e
 ```
 
-### 运行程序
+详细使用方法请参考 [使用文档](docs/usage.md)。
 
-```bash
-python 加解密.py
+## 项目结构
+
 ```
-
-## 使用说明
-
-### 文本加密
-
-1. 在左上文本框输入要加密的文本
-2. 点击"生成密钥"按钮获取随机密钥
-3. 点击"加密"按钮进行加密
-4. 加密后的文本会显示在左下文本框
-5. 请务必记录密钥信息，解密时需要使用
-
-### 文本解密
-
-1. 在右上文本框输入要解密的文本
-2. 输入完整的四位密钥（格式为：`初始UP值 初始FRONT值 加密后UP值 加密后FRONT值`）
-3. 点击"解密"按钮进行解密
-4. 解密后的文本会显示在右下文本框
-
-### 文件加解密
-
-使用`加解密文件.py`可以对文件进行加解密：
-
-```bash
-python 加解密文件.py
+.
+├── docs/                # 文档目录
+│   └── usage.md         # 详细使用说明
+├── images/              # 图片资源
+├── src/                 # 源代码
+│   ├── f_c.py           # 核心函数库
+│   ├── 加解密.py         # 主程序(GUI)
+│   ├── jiajiemi.py      # GUI界面定义
+│   ├── jiajiemi.ui      # GUI界面设计
+│   └── 加解密文件.py      # 文件加解密
+├── tests/               # 测试代码
+│   ├── test_encryption.py  # 单元测试
+│   └── ...              # 其他测试工具
+├── .gitignore           # Git忽略文件
+├── main.py              # 主入口
+├── README.md            # 项目说明
+└── requirements.txt     # 依赖列表
 ```
 
 ## 技术原理
@@ -97,27 +88,77 @@ python 加解密文件.py
    - 将新状态作为下一个字符的初始状态
 4. 生成密文和最终密钥
 
-## 高级功能
+## 安装指南
 
-- **密钥传递**：加密后密钥会自动显示，可用于解密
-- **文本传递**：可直接将加密文本传递到解密输入框
-- **自定义密钥**：支持手动输入密钥进行加解密
-- **中文支持**：自动将中文转换为拼音处理，保留原文语义
+### 环境要求
+- Python 3.6+
+- Windows/Linux/macOS
 
-## 安全性说明
+### 安装依赖
 
-- 算法使用骰子状态转换提供密钥复杂性
-- 字符间的加密状态相互影响，增强安全性
-- 建议使用较长文本提高加密强度
-- 密钥由四个数字组成，但实际密钥空间远大于此
+```bash
+pip install -r requirements.txt
+```
 
-## 文件说明
+## 使用说明
 
-- `遥控.py`: 远程控制功能实现
-- `天干地支.py`: 天干地支转换工具
-- `测试相等.py`: 算法正确性测试
-- `超时模板.py`: 超时处理模板
-- 其他 `.txt` 文件: 测试数据和结果
+### 图形界面
+
+启动图形界面：
+
+```bash
+python main.py
+```
+
+#### 文本加密
+
+1. 在左上文本框输入要加密的文本
+2. 点击"生成密钥"按钮获取随机密钥
+3. 点击"加密"按钮进行加密
+4. 加密后的文本会显示在左下文本框
+5. 请务必记录密钥信息，解密时需要使用
+
+#### 文本解密
+
+1. 在右上文本框输入要解密的文本
+2. 输入完整的四位密钥（格式为：`初始UP值 初始FRONT值 加密后UP值 加密后FRONT值`）
+3. 点击"解密"按钮进行解密
+4. 解密后的文本会显示在右下文本框
+
+### 命令行使用
+
+```bash
+# 查看帮助
+python main.py -h
+
+# 文件加解密
+python main.py -f
+
+# 文本加密
+python main.py -t "你好，世界" -k "2 3" -e
+```
+
+## 开发
+
+### 运行测试
+
+```bash
+python -m unittest discover -s tests
+```
+
+### 构建文档
+
+```bash
+# 如果有更多文档需求，可以考虑使用Sphinx等工具
+```
+
+## 贡献指南
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add some amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 创建 Pull Request
 
 ## 许可协议
 
