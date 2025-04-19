@@ -39,6 +39,7 @@ wheels/
 !examples/*.txt
 test.png
 test.py
+!examples/test.py
 
 # 编译产物
 *.spec
