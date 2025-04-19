@@ -37,7 +37,6 @@ wheels/
 *.txt
 !requirements.txt
 !examples/*.txt
-test.png
 test.py
 !examples/test.py
 
