@@ -145,6 +145,15 @@ python main.py -f
 python src/加解密文件.py
 ```
 
+### 示例文件
+
+在`examples`目录中提供了示例文件供参考：
+- `1.txt`: 示例输入文本
+- `ciphertext.txt`: 加密后的结果
+- `pinyin_text.txt`: 中文转拼音的结果
+- `decrypted_plaintext.txt`: 解密后的文本
+- `pinyin_plaintext.txt`: 解密后转换回中文的结果
+
 ### 操作流程
 
 1. 准备要加密的文件，命名为`1.txt`并放在程序同一目录下

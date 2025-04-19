@@ -51,6 +51,11 @@ For detailed usage instructions, please refer to the [usage documentation](docs/
 .
 ├── docs/                # Documentation
 │   └── usage.md         # Detailed usage instructions
+├── examples/            # Example files directory
+│   ├── 1.txt            # Sample input file
+│   ├── ciphertext.txt   # Encryption results
+│   ├── pinyin_text.txt  # Pinyin conversion results
+│   └── ...              # Other processing results
 ├── images/              # Image resources
 ├── src/                 # Source code
 │   ├── f_c.py           # Core function library

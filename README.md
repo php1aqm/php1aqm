@@ -51,6 +51,11 @@ python main.py -t "要加密的文本" -k "2 3" -e
 .
 ├── docs/                # 文档目录
 │   └── usage.md         # 详细使用说明
+├── examples/            # 示例文件目录
+│   ├── 1.txt            # 示例输入文件
+│   ├── ciphertext.txt   # 加密结果
+│   ├── pinyin_text.txt  # 拼音转换结果
+│   └── ...              # 其他处理结果
 ├── images/              # 图片资源
 ├── src/                 # 源代码
 │   ├── f_c.py           # 核心函数库
@@ -64,6 +69,7 @@ python main.py -t "要加密的文本" -k "2 3" -e
 ├── .gitignore           # Git忽略文件
 ├── main.py              # 主入口
 ├── README.md            # 项目说明
+├── README_EN.md         # 英文说明
 └── requirements.txt     # 依赖列表
 ```
 
